@@ -19,7 +19,7 @@ const ENV = {
   enterprise: process.env.WEBPURIFY_ENTERPRISE
 };
 const DEFAULT_PARAMS = {
-  endpoint: 'us',
+  endpoint: 'eu',
   enterprise: false
 };
 

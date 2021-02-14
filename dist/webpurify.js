@@ -297,16 +297,16 @@ class WebPurify {
     }
   }
 
-  async aimImgCheck(imgurl) {
+  async aimImgCheck(imgurl, cats) {
     let method = 'webpurify.aim.imgcheck';
     let params = {
       method,
-      imgurl
+      imgurl,
+      cats
     };
 
     try {
-      const res = await this.get(params, null, _configuration.API_HOSTS['im']);
-      return Number.parseFloat(res.nudity);
+      return await this.get(params, null, _configuration.API_HOSTS['im']);
     } catch (error) {
       return error;
     }
