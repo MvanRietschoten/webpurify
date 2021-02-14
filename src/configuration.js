@@ -15,7 +15,7 @@ const ENV = {
 };
 
 const DEFAULT_PARAMS = {
-  endpoint: 'us',
+  endpoint: 'eu',
   enterprise: false
 };
 

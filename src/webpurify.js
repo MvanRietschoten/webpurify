@@ -370,14 +370,14 @@ export default class WebPurify {
   /**
    * Checks the passed imageurl moderation. It will need a callback.
    * @param {string} imgurl - The URL of the image
+   * @param {string} cats - The categories that should be checked.
    * @return {Promise}
    */
-  async aimImgCheck(imgurl) {
+  async aimImgCheck(imgurl, cats) {
     let method = 'webpurify.aim.imgcheck';
-    let params = { method, imgurl };
+    let params = { method, imgurl, cats };
     try {
-      const res = await this.get(params, null, API_HOSTS['im']);
-      return Number.parseFloat(res.nudity);
+      return await this.get(params, null, API_HOSTS['im']);
     } catch(error) {
       return error;
     }
